@@ -51,7 +51,7 @@ server.delete('/motos/:id', async function(req, res){
 server.put('/motos/:id', async (request, response) => {
     const {id} = request.params;
     const {marca,modelo,anofabri} = request.body;
-    const sql = `UPDATE equipes SET marca = $1, modelo = $2, anofabri = $3 WHERE id = $4`;
-    await pool.query(sql, [marca,modelo,arena,id]);
+    const sql = `UPDATE motos SET marca = $1, modelo = $2, anofabri = $3 WHERE id = $4`;
+    await pool.query(sql, [marca,modelo,anofabri,id]);
     return response.status(204).send();
 })
